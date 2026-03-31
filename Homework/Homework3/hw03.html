@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HW03 - Circle / Line Segment Intersection</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000000;
+      color: white;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding-top: 20px;
+    }
+
+    #wrap {
+      position: relative;
+      width: fit-content;
+    }
+
+    canvas {
+      display: block;
+      background: #003468;
+    }
+
+    #info {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      z-index: 10;
+      line-height: 1.6;
+      white-space: pre;
+      font-size: 14px;
+      color: #ffffff;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    #help {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <canvas id="glcanvas" width="700" height="700"></canvas>
+    <div id="info"></div>
+   
+    </div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
