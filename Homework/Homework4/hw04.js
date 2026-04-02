@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initWebGL() {
     if (!gl) return false;
-    
+
     canvas.width = 700;
     canvas.height = 700;
     resizeAspectRatio(gl, canvas);
@@ -74,7 +74,7 @@ function render(elapsedTime) {
     // 1. 고정된 풍차 기둥 그리기 (갈색)
     let model = mat4.create();
     mat4.translate(model, model, [0.0, -0.3, 0.0]); // 화면 아래쪽으로 이동
-    mat4.scale(model, model, [0.15, 0.8, 1.0]); // 기둥 모양으로 스케일
+    mat4.scale(model, model, [0.2, 0.8, 1.0]); // 기둥 모양으로 스케일
     shader.setMat4("u_transform", model);
     gl.vertexAttrib4f(colorLoc, 0.55, 0.35, 0.15, 1.0);
     gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, 0);
@@ -83,7 +83,7 @@ function render(elapsedTime) {
     model = mat4.create();
     mat4.translate(model, model, center); // 회전 중심점으로 이동
     mat4.rotateZ(model, model, bigRot);   // 애니메이션 회전 적용
-    mat4.scale(model, model, [0.8, 0.1, 1.0]); // 넓은 직사각형으로 스케일
+    mat4.scale(model, model, [0.6, 0.1, 1.0]); // 넓은 직사각형으로 스케일
     shader.setMat4("u_transform", model);
     gl.vertexAttrib4f(colorLoc, 0.9, 0.9, 0.9, 1.0); 
     gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, 0);
@@ -92,7 +92,7 @@ function render(elapsedTime) {
     model = mat4.create();
     mat4.translate(model, model, center); 
     mat4.rotateZ(model, model, bigRot); // 큰 날개와 함께 회전 (부모 노드의 변환)
-    mat4.translate(model, model, [0.4, 0.0, 0.0]); // 큰 날개의 오른쪽 끝으로 이동 (0.8의 절반)
+    mat4.translate(model, model, [0.3, 0.0, 0.0]); // 큰 날개의 오른쪽 끝으로 이동 (0.8의 절반)
     mat4.rotateZ(model, model, smallRot); // 자신의 중심축을 기준으로 회전
     mat4.scale(model, model, [0.15, 0.05, 1.0]); 
     shader.setMat4("u_transform", model);
@@ -103,7 +103,7 @@ function render(elapsedTime) {
     model = mat4.create();
     mat4.translate(model, model, center); 
     mat4.rotateZ(model, model, bigRot); // 큰 날개와 함께 회전
-    mat4.translate(model, model, [-0.4, 0.0, 0.0]); // 큰 날개의 왼쪽 끝으로 이동
+    mat4.translate(model, model, [-0.3, 0.0, 0.0]); // 큰 날개의 왼쪽 끝으로 이동
     mat4.rotateZ(model, model, smallRot); // 자신의 중심축을 기준으로 회전
     mat4.scale(model, model, [0.15, 0.05, 1.0]); 
     shader.setMat4("u_transform", model);
